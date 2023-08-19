@@ -1,2 +1,1 @@
-0x00. C - Hello, World
-C
+This is a README
