@@ -1,24 +1,26 @@
 #include <stdio.h>
 
-void _putchar(char c) {
-    putchar(c);
-}
-
+/**
+ * print_triangle - Prints a triangle of a given size.
+ * @size: The size of the triangle.
+ *
+ * Return: void
+ */
 void print_triangle(int size) {
+    int i, j;
+
     if (size <= 0) {
-        _putchar('\n');
+        printf("\n");
         return;
     }
 
-    for (int i = 1; i <= size; i++) {
-        for (int j = 1; j <= size - i; j++) {
-            _putchar(' ');
+    for (i = 1; i <= size; i++) {
+        for (j = 1; j <= size - i; j++) {
+            printf(" ");
         }
-        for (int j = 1; j <= i; j++) {
-            _putchar('#');
+        for (j = 1; j <= i; j++) {
+            printf("#");
         }
-        _putchar('\n');
+        printf("\n");
     }
 }
-
-
