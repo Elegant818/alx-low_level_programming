@@ -7,7 +7,7 @@
  *
  * Return: Return the nth node if exist or NULL if not
  */
-	
+
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	dlistint_t *current;
