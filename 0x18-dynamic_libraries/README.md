@@ -1,1 +1,1 @@
-#0x18. C - Dynamic libraries Project
+#Solution to 0x18. C - Dynamic libraries project
