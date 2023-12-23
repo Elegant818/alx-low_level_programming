@@ -1,33 +1,17 @@
 #include "hash_tables.h"
-#include <stdlib.h>
 
 /**
- * hash_table_delete - It deletes a hash table
- * @ht: A pointer to the hash table
+ * key_index - Get the index at which a key/value pair should
+ *             be stored in array of a hash table.
+ * @key: The key to get the index of.
+ * @size: The size of the array of the hash table.
  *
- * Return: Return nothing
+ * Return: The index of the key.
+ *
+ * Description: Uses the djb2 algorithm.
  */
 
-void hash_table_delete(hash_table_t *ht)
+unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	unsigned long int i;
-	hash_node_t *current, *temp;
-
-	if (ht == NULL)
-		return;
-
-	for (i = 0; i < ht->size; i++)
-	{
-		current = ht->array[i];
-
-		while (current != NULL)
-		{
-			temp = current->next;
-			free(current->key);
-			free(current->value);
-			free(current);
-			current = temp;
-		}
-	}
-	free(ht->array);
-	free(ht), ht = NULL;
+	return (hash_djb2(key) % size);
+}
